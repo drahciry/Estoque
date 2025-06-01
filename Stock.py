@@ -83,8 +83,19 @@ class Stock:
         if not self.__stock["category"][category]:
             del self.__stock["category"][category]
 
+    # Método para obter todos os produtos por categoria
+    def get_by_category(self, category: str):
+        # Verifica se a entrada é válida
+        if not isinstance(category, str) or not category.strip():
+            raise InvalidCategoryError('Categoria inserida inválida (string vazia ou nula).')
+        # Verifica se a categoria existe no estoque
+        if not self.__stock["category"].get(category, None):
+            raise InvalidCategoryError('Categoria não registrada no estoque.')
+        # Retorna uma lista com todos os produtos da categoria inserida
+        return self.__stock["products"][category]
+
     # Método para listar todos os produtos por categoria
-    def list_category(self, category: str):
+    def display_by_category(self, category: str):
         # Verifica se a entrada é válida
         if not isinstance(category, str) or not category.strip():
             raise InvalidCategoryError('Categoria inserida inválida (string vazia ou nula).')
