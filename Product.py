@@ -1,3 +1,4 @@
+# Importações de módulos e bibliotecas
 from Exceptions import InvalidCategoryError, InvalidNameError, InvalidPriceError, InvalidQuantifyError
 from Price import Price
 

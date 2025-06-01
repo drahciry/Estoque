@@ -1,3 +1,4 @@
+# Importações de módulos e bibliotecas
 from decimal import Decimal, InvalidOperation
 from Exceptions import InvalidPriceError
 

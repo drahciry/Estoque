@@ -9,4 +9,8 @@ Irei aos poucos melhorando este programa.
 
 Alteração: 01/06/2025
 
-Comecei a refatoração do programa, implementando classes e verificações para moedas, pois o uso de float causa inconsistência.
+Comecei a refatoração do programa, implementando classes e verificações para moedas, pois o uso de float causa inconsistência por falta de precisão.
+
+Alteração: 01/06/2025
+
+Concluí a implementação de classes. Caso não esteja faltando nada (ainda não testei), falta somente a implementação da lógica principal, onde criarei um arquivo main.py e um menu interativo pelo terminal e farei a implementação de todas as funções necessárias para o bom funcionamento do sistema, como: adicionar produto, remover produto, vender produto, receber produto, criar remessa, editar produto, encerrar sistema, realizar consultas, etc.
