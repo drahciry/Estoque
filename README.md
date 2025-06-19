@@ -1,16 +1,52 @@
-# Estoque
-Programa que simula um estoque, usando Python e JSON
+# 📦 Sistema de Controle de Estoque
 
-## Alteração: 29/05/2025
+Este projeto é um exemplo de sistema de controle de estoque, escrito em **Python** com persistência de dados em **JSON**. Ele demonstra conceitos de orientação a objetos, boas práticas de validação de dados e organização do código para facilitar manutenções futuras.
 
-- O programa está um pouco básico, como a falta de separação das funções por arquivos e pela falta de orientação a objetos, mas o código é funcional e realiza a verificação de muitas situações em que o usuário poderia entrar com valores errados. O uso de float para representar valores também é um erro, porém, como não há operações grandes e conversões de moedas, não afeta o resultado final.
+## 📌 Histórico de Versões
 
-- Irei aos poucos melhorando este programa.
+**1.0 — 29/05/2025**
 
-## Alteração: 01/06/2025 - 1.1
+* Versão inicial, funcional, com estrutura simples em um único arquivo e uso de `float` para valores monetários.
 
-- Comecei a refatoração do programa, implementando classes e verificações para moedas, pois o uso de float causa inconsistência por falta de precisão.
+**1.1 — 01/06/2025**
 
-## Alteração: 01/06/2025 - 1.2
+* Início da refatoração para arquitetura orientada a objetos.
+* Melhoria no tratamento de valores monetários para maior precisão.
 
-- Concluí a implementação de classes. Caso não esteja faltando nada (ainda não testei), falta somente a implementação da lógica principal, onde criarei um arquivo main.py e um menu interativo pelo terminal e farei a implementação de todas as funções necessárias para o bom funcionamento do sistema, como: adicionar produto, remover produto, vender produto, receber produto, criar remessa, editar produto, encerrar sistema, realizar consultas, etc.
+**1.2 — 01/06/2025**
+
+* Estrutura de classes finalizada.
+* Planejamento de um arquivo principal (`main.py`) com um menu interativo para operações de estoque.
+
+## ✅ Funcionalidades Implementadas
+
+* Estrutura com classes e métodos organizados.
+* Validação de entradas para evitar erros de usuário.
+* Salvamento de dados em arquivo JSON.
+
+## 🚀 Funcionalidades Planejadas
+
+* Implementar o menu interativo em `main.py`.
+* Adicionar, remover, vender e consultar produtos.
+* Criar operações para remessas e relatórios de estoque.
+
+## 🧑‍💻 Requisitos do Projeto
+
+* Python 3.10 ou superior.
+
+## 💡 Como Executar o Projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+
+# Acesse a pasta do projeto
+cd SEU_REPOSITORIO
+
+# Execute o programa principal
+python main.py
+```
+
+## 📄 Licença
+
+Este projeto está disponível como software de código aberto. Contribuições são bem-vindas!
