@@ -27,16 +27,7 @@ class Stock:
             raise EmptyStockError('Estoque está vazio.')
         # Retorna produtos em uma lista
         return self.__stock["products"].values()
-
-    # Método para exibir todos os produtos em estoque
-    def display_products(self):
-        # Verifica se estoque está cheio
-        if self.__is_empty():
-            raise EmptyStockError('Estoque está vazio.')
-        # Exibe produtos
-        for product in self.__stock["products"].values():
-            print(product)
-
+    
     # Método para obter valor total em estoque
     def get_total_value(self) -> Decimal:
         return self.__stock["total_value"]
