@@ -1,3 +1,4 @@
+# Importações de módulos e bibliotecas
 from Exceptions import EmptyStockError, InvalidPriceError,  InvalidProductError, InvalidCategoryError, InvalidPathError
 from Price import Price
 from Stock import Stock
