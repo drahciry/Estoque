@@ -85,7 +85,7 @@ class Stock:
         if not self.__stock["category"].get(category, None):
             raise InvalidCategoryError('Categoria não registrada no estoque.')
         # Retorna uma lista com todos os produtos da categoria inserida
-        return self.__stock["products"][category]
+        return self.__stock["category"][category]
 
     # Método para listar todos os produtos por categoria
     def display_by_category(self, category: str):
