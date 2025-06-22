@@ -15,10 +15,15 @@ class Stock:
             "products": {},   # Armazena todas os produtos
             "category": {}    # Armazena produtos por categoria
         }
+        self.__change = False
 
     # Método para obter todos os dados do estoque
     def get_stock(self) -> dict:
         return self.__stock
+    
+    # Método para obter status de alteração
+    def get_change(self) -> bool:
+        return self.__change
     
     # Método para obter todos os produtos em estoque
     def get_products(self) -> list:
@@ -52,6 +57,8 @@ class Stock:
             self.__stock["category"][category] = list()
         # Armazena produto na sua categoria
         self.__stock["category"][category].append(product)
+        # Altera variável de controle de alteração
+        self.__change = True
 
     # Método para deletar produto do estoque
     def delete_product(self, id: int):
@@ -75,6 +82,8 @@ class Stock:
         # Verifica se ainda existe produtos na categoria
         if not self.__stock["category"][category]:
             del self.__stock["category"][category]
+        # Altera variável de controle de alteração
+        self.__change = True
 
     # Método para obter todos os produtos por categoria
     def get_by_category(self, category: str):
@@ -99,6 +108,8 @@ class Stock:
         # Salva estoque em JSON
         with open(path, 'w', encoding='utf-8') as file:
             j.dump(dict_data, file, indent=4, ensure_ascii=False)
+        # Altera variável de controle de alteração
+        self.__change = False
 
     # Método para salvar todos os produtos por categoria em JSON
     def save_category_json(self, path: str):
