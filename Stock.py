@@ -112,7 +112,6 @@ class Stock:
     def save_stock_json(self, path: str):
         # Cria dicionário para ser salvo em JSON
         dict_data = {
-            "current_id": self.__stock["current_id"],
             "total_value": self.__stock["total_value"],
             "products": {
                 pid: product.to_dict() for pid, product in self.__stock["products"].items()
@@ -145,11 +144,8 @@ class Stock:
             data = dict_data["products"][key]
             # Adiciona produto no estoque
             self.append_product(
-                data["id"],
                 data["name"],
                 Price(data["price"]),
                 data["quantify"],
                 data["category"]
             )
-        # Atualiza o próximo ID
-        self.__stock["current_id"] = dict_data["current_id"]
