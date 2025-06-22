@@ -1,6 +1,7 @@
 # Importações de módulos e bibliotecas
-from Exceptions import EmptyStockError, InvalidProductError, InvalidCategoryError, InvalidPathError
+from Exceptions import EmptyStockError, InvalidProductError, InvalidCategoryError, InvalidPathError, InvalidPriceError
 from Product import Product
+from decimal import Decimal
 from Price import Price
 import json as j
 import os
@@ -16,11 +17,11 @@ class Stock:
         }
 
     # Método para obter todos os dados do estoque
-    def get_stock(self):
+    def get_stock(self) -> dict:
         return self.__stock
     
     # Método para obter todos os produtos em estoque
-    def get_products(self):
+    def get_products(self) -> list:
         # Verifica se estoque está cheio
         if self.__is_empty():
             raise EmptyStockError('Estoque está vazio.')
@@ -37,21 +38,19 @@ class Stock:
             print(product)
 
     # Método para obter valor total em estoque
-    def get_total_value(self):
+    def get_total_value(self) -> Decimal:
         return self.__stock["total_value"]
 
     # Método para verificar se estoque está cheio
-    def __is_empty(self):
+    def __is_empty(self) -> bool:
         return not self.__stock["products"]
     
     # Método para adicionar novos produtos em estoque
-    def append_product(self, product: Product):
-        # Verifica se o produto inserido é uma instância de Product
-        if not isinstance(product, Product):
-            raise InvalidProductError('Objeto inserido não é uma instância de Product.')
-        # Verifica se o produto já existe em estoque
-        if product.get_id() in self.__stock["products"]:
-            raise InvalidProductError(f'Produto com ID {product.get_id()} já existe no estoque.')
+    def append_product(self, name: str, price: Price, quantify: int, category: str):
+        # Incrementa o ID
+        self.__stock["current_id"] += 1
+        # Instancia Product
+        product = Product(self.__stock["current_id"], name, price, quantify, category)
         # Incrementa o valor total em estoque
         self.__stock["total_value"] += product.get_price() * product.get_quantify()
         # Adiciona o produto ao estoque
@@ -142,12 +141,12 @@ class Stock:
         for key in dict_data["products"].keys():
             data = dict_data["products"][key]
             # Adiciona produto no estoque
-            self.append_product(Product(
+            self.append_product(
                 data["id"],
                 data["name"],
                 Price(data["price"]),
                 data["quantify"],
                 data["category"]
-            ))
+            )
         # Atualiza o próximo ID
         self.__stock["current_id"] = dict_data["current_id"]
