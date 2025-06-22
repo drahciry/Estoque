@@ -67,7 +67,7 @@ class Product:
         return {
             "id": self.get_id(),
             "name": self.get_name(),
-            "price": self.get_price(),
+            "price": str(self.get_price()),
             "quantify": self.get_quantify(),
             "category": self.get_category()
         }
