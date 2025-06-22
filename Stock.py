@@ -87,18 +87,6 @@ class Stock:
         # Retorna uma lista com todos os produtos da categoria inserida
         return self.__stock["category"][category]
 
-    # Método para listar todos os produtos por categoria
-    def display_by_category(self, category: str):
-        # Verifica se a entrada é válida
-        if not isinstance(category, str) or not category.strip():
-            raise InvalidCategoryError('Categoria inserida inválida (string vazia ou nula).')
-        # Verifica se a categoria existe no estoque
-        if not self.__stock["category"].get(category, None):
-            raise InvalidCategoryError('Categoria não registrada no estoque.')
-        # Lista todos os produtos da categoria inserida
-        for product in self.__stock["category"][category]:
-            print(product)
-
     # Método para salvar estoque em arquivo JSON
     def save_stock_json(self, path: str):
         # Cria dicionário para ser salvo em JSON
