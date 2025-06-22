@@ -100,7 +100,7 @@ class Stock:
     def save_stock_json(self, path: str):
         # Cria dicionário para ser salvo em JSON
         dict_data = {
-            "total_value": self.__stock["total_value"],
+            "total_value": str(self.__stock["total_value"]),
             "products": {
                 pid: product.to_dict() for pid, product in self.__stock["products"].items()
             } # Obs: "category" não está incluída pois há um método separado para categorias
@@ -158,4 +158,4 @@ class Stock:
         # Atualiza contador
         self.__stock["current_id"] = max_id
         # Atualiza valor total em estoque
-        self.__stock["total_value"] = dict_data.get("total_value", Decimal("0"))
+        self.__stock["total_value"] = Decimal(dict_data.get("total_value", "0"))
