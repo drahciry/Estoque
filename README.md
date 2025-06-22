@@ -38,10 +38,10 @@ Este projeto é um exemplo de sistema de controle de estoque, escrito em **Pytho
 
 ```bash
 # Clone o repositório
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone https://github.com/drahciry/Estoque
 
 # Acesse a pasta do projeto
-cd SEU_REPOSITORIO
+cd Estoque
 
 # Execute o programa principal
 python main.py
