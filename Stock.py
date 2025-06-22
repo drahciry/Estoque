@@ -67,6 +67,9 @@ class Stock:
         # Verifica se entrada é um int
         if not isinstance(id, int):
             raise ValueError('O ID deve ser um número inteiro.')
+        # Verifica se entrada é maior que 0
+        if id <= 0:
+            raise ValueError('O ID deve ser maior que 0.')
         # Verifica se o produto com ID inserido existe
         if not self.__stock["products"].get(str(id), None):
             raise InvalidProductError(f'Produto de ID {id:0>5} não existe no estoque.')
