@@ -1,52 +1,94 @@
-# 📦 Sistema de Controle de Estoque
+# 📦 Sistema de Gerenciamento de Estoque — Python
 
-Este projeto é um exemplo de sistema de controle de estoque, escrito em **Python** com persistência de dados em **JSON**. Ele demonstra conceitos de orientação a objetos, boas práticas de validação de dados e organização do código para facilitar manutenções futuras.
+Bem-vindo ao **Sistema de Gerenciamento de Estoque**, um projeto robusto feito em Python, usando **Programação Orientada a Objetos**, **validação de dados rigorosa** e **persistência de informações** em arquivos JSON.
 
-## 📌 Histórico de Versões
+---
 
-**1.0 — 29/05/2025**
+## 🚀 Funcionalidades
 
-* Versão inicial, funcional, com estrutura simples em um único arquivo e uso de `float` para valores monetários.
+- ✅ **Cadastro de Produtos:** nome, preço, quantidade e categoria, com validação de entradas.
+- ✅ **Gerenciamento Completo:** adição e remoção de produtos, listagem geral, consulta por categoria e cálculo do valor total do estoque.
+- ✅ **Persistência de Dados:** salva o estoque em arquivo `.json` e carrega automaticamente ao iniciar.
+- ✅ **Interface Interativa:** menu amigável via terminal, com confirmações e mensagens claras.
 
-**1.1 — 01/06/2025**
+---
 
-* Início da refatoração para arquitetura orientada a objetos.
-* Melhoria no tratamento de valores monetários para maior precisão.
+## 🗂️ Estrutura do Projeto
 
-**1.2 — 01/06/2025**
-
-* Estrutura de classes finalizada.
-* Planejamento de um arquivo principal (`main.py`) com um menu interativo para operações de estoque.
-
-## ✅ Funcionalidades Implementadas
-
-* Estrutura com classes e métodos organizados.
-* Validação de entradas para evitar erros de usuário.
-* Salvamento de dados em arquivo JSON.
-
-## 🚀 Funcionalidades Planejadas
-
-* Implementar o menu interativo em `main.py`.
-* Adicionar, remover, vender e consultar produtos.
-* Criar operações para remessas e relatórios de estoque.
-
-## 🧑‍💻 Requisitos do Projeto
-
-* Python 3.10 ou superior.
-
-## 💡 Como Executar o Projeto
-
-```bash
-# Clone o repositório
-git clone https://github.com/drahciry/Estoque
-
-# Acesse a pasta do projeto
-cd Estoque
-
-# Execute o programa principal
-python main.py
+```
+├── Exceptions.py   # Exceções customizadas
+├── Price.py        # Classe Price para tratar preços com precisão decimal
+├── Product.py      # Classe Product com validações de atributos
+├── Stock.py        # Classe Stock com toda a lógica de estoque
+├── main.py         # Ponto de entrada: interface interativa via terminal
+├── README.md       # Este arquivo
+├── stock.json      # (Gerado automaticamente) Base de dados persistente
 ```
 
-## 📄 Licença
+---
 
-Este projeto está disponível como software de código aberto. Contribuições são bem-vindas!
+## ⚙️ Pré-requisitos
+
+- Python **3.10+**
+- Nenhuma biblioteca externa (usa apenas `decimal`, `json`, `os`).
+
+---
+
+## 📥 Como Executar
+
+1. **Clone o repositório ou baixe os arquivos:**
+
+   ```bash
+   git clone https://github.com/seuusuario/seurepositorio.git
+   cd seurepositorio
+   ```
+
+2. **Execute o arquivo principal:**
+
+   ```bash
+   python main.py
+   ```
+
+3. **Use o menu interativo para gerenciar o estoque.**
+
+---
+
+## 💾 Salvando e Carregando
+
+- **Salvar:** o sistema pergunta se deseja salvar as alterações antes de sair.
+- **Arquivo:** os dados são salvos em `stock.json`.
+- **Carregar:** o estoque é carregado automaticamente ao iniciar, caso o arquivo exista.
+
+---
+
+## 🧩 Principais Classes
+
+### 🔑 Product
+
+- Contém ID, nome, preço (objeto `Price`), quantidade e categoria.
+- Valida todos os atributos para garantir integridade.
+
+### 💲 Price
+
+- Usa `decimal.Decimal` para cálculos monetários sem perda de precisão.
+- Valida valores positivos e formato correto.
+
+### 📦 Stock
+
+- Gerencia produtos e categorias.
+- Mantém o valor total do estoque sempre atualizado.
+- Permite exportar os dados em JSON (por ID ou por categoria).
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Richard**, estudante de Ciência da Computação da UERJ.
+
+---
+
+## 📜 Licença
+
+Este projeto é **open-source**. Fique à vontade para usar, estudar, melhorar e compartilhar!
+
+---
