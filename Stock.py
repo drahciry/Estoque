@@ -118,13 +118,33 @@ class Stock:
         # Carrega dados de arquivo JSON
         with open(path, 'r', encoding='utf-8') as file:
             dict_data = j.load(file)
+        # Limpa estoque para evitar duplicação
+        self.__stock["products"].clear()
+        self.__stock["category"].clear()
+        # Variável que guardará maior ID atualizado
+        max_id = 0
         # Lê do arquivo JSON todos os produtos salvos
-        for key in dict_data["products"].keys():
-            data = dict_data["products"][key]
-            # Adiciona produto no estoque
-            self.append_product(
+        for data in dict_data["products"].values():
+            # Cria produto com ID do arquivo carregado
+            product = Product(
+                int(data["id"]),
                 data["name"],
                 Price(data["price"]),
                 data["quantify"],
                 data["category"]
             )
+            # Adiciona produto no estoque
+            self.__stock["products"][str(product.get_id())] = product 
+            category = product.get_category()
+            # Verifica se a categoria do produto já existe
+            if category not in self.__stock["category"]:
+                self.__stock["category"][category] = list()
+            # Armazena produto na sua categoria
+            self.__stock["category"][category].append(product)
+            # Acha o maior ID para atualizar contador
+            if product.get_id() > max_id:
+                max_id = product.get_id()
+        # Atualiza contador
+        self.__stock["current_id"] = max_id
+        # Atualiza valor total em estoque
+        self.__stock["total_value"] = dict_data.get("total_value", Decimal("0"))
