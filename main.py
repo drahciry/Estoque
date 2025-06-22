@@ -198,7 +198,6 @@ def main():
     # Programa encerrado
     print('Programa encerrado!\n')
     
-
 # Segurança
 if __name__ == '__main__':
     main()
