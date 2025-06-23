@@ -1,19 +1,19 @@
-# 📦 Sistema de Gerenciamento de Estoque — Python
+# Sistema de Gerenciamento de Estoque — Python
 
-Bem-vindo ao **Sistema de Gerenciamento de Estoque**, um projeto robusto feito em Python, usando **Programação Orientada a Objetos**, **validação de dados rigorosa** e **persistência de informações** em arquivos JSON.
-
----
-
-## 🚀 Funcionalidades
-
-- ✅ **Cadastro de Produtos:** nome, preço, quantidade e categoria, com validação de entradas.
-- ✅ **Gerenciamento Completo:** adição e remoção de produtos, listagem geral, consulta por categoria e cálculo do valor total do estoque.
-- ✅ **Persistência de Dados:** salva o estoque em arquivo `.json` e carrega automaticamente ao iniciar.
-- ✅ **Interface Interativa:** menu amigável via terminal, com confirmações e mensagens claras.
+**Sistema de Gerenciamento de Estoque**, um projeto robusto feito em Python, usando **Programação Orientada a Objetos**, **validação de dados rigorosa** e **persistência de informações** em arquivos JSON.
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## Funcionalidades
+
+- **Cadastro de Produtos:** nome, preço, quantidade e categoria, com validação de entradas.
+- **Gerenciamento Completo:** adição e remoção de produtos, listagem geral, consulta por categoria e cálculo do valor total do estoque.
+- **Persistência de Dados:** salva o estoque em arquivo `.json` e carrega automaticamente ao iniciar.
+- **Interface Interativa:** menu amigável via terminal, com confirmações e mensagens claras.
+
+---
+
+## Estrutura do Projeto
 
 ```
 ├── Exceptions.py   # Exceções customizadas
@@ -27,14 +27,14 @@ Bem-vindo ao **Sistema de Gerenciamento de Estoque**, um projeto robusto feito e
 
 ---
 
-## ⚙️ Pré-requisitos
+## Pré-requisitos
 
 - Python **3.10+**
 - Nenhuma biblioteca externa (usa apenas `decimal`, `json`, `os`).
 
 ---
 
-## 📥 Como Executar
+## Como Executar
 
 1. **Clone o repositório ou baixe os arquivos:**
 
@@ -53,7 +53,7 @@ Bem-vindo ao **Sistema de Gerenciamento de Estoque**, um projeto robusto feito e
 
 ---
 
-## 💾 Salvando e Carregando
+## Salvando e Carregando
 
 - **Salvar:** o sistema pergunta se deseja salvar as alterações antes de sair.
 - **Arquivo:** os dados são salvos em `stock.json`.
@@ -61,19 +61,19 @@ Bem-vindo ao **Sistema de Gerenciamento de Estoque**, um projeto robusto feito e
 
 ---
 
-## 🧩 Principais Classes
+## Principais Classes
 
-### 🔑 Product
+### Product
 
 - Contém ID, nome, preço (objeto `Price`), quantidade e categoria.
 - Valida todos os atributos para garantir integridade.
 
-### 💲 Price
+### Price
 
 - Usa `decimal.Decimal` para cálculos monetários sem perda de precisão.
 - Valida valores positivos e formato correto.
 
-### 📦 Stock
+### Stock
 
 - Gerencia produtos e categorias.
 - Mantém o valor total do estoque sempre atualizado.
@@ -81,13 +81,13 @@ Bem-vindo ao **Sistema de Gerenciamento de Estoque**, um projeto robusto feito e
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 Desenvolvido por **Richard**, estudante de Ciência da Computação da UERJ.
 
 ---
 
-## 📜 Licença
+## Licença
 
 Este projeto é **open-source**. Fique à vontade para usar, estudar, melhorar e compartilhar!
 
